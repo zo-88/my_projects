@@ -8,6 +8,7 @@ current_weight = float(input("What is your weight? "))
 goal_weight = float(input("What is in your goal weight?"))
 
 
+
 # calculate weight needed to lose to reach goal weight function
 def weight_goal(current, goal):
     
@@ -28,11 +29,21 @@ def weight_goal(current, goal):
         print(f"It will take around {days} days to lose {lose_kg}")
     else:
         print("ok, remember no snacking! Good luck!")
+    print("Note must have yesterday's weight to compare to do the following:")
+    should_continue = input("Would you like to measure you daily weight lost Y/N? ").lower()
+    if should_continue == 'y':
+        print("ok let's do this")
+    else:
+        print("ok bye")
+
       
     
     
+#Function weight_goal called
+
     
 weight_goal(current = current_weight, goal = goal_weight)
+
 
 
                          
