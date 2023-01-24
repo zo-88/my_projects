@@ -20,19 +20,19 @@ def weight_goal(current, goal):
         print(f"You want to lose {user_amount}Kg per day")
         
         days = math.ceil(lose_kg/user_amount)
-        
-        #i = 0
-        #days = 0
-        #while i < lose_kg:
-            #days += 1
-            #i += user_amount
+      
         print(f"It will take around {days} days to lose {lose_kg}")
     else:
         print("ok, remember no snacking! Good luck!")
     print("Note must have yesterday's weight to compare to do the following:")
     should_continue = input("Would you like to measure you daily weight lost Y/N? ").lower()
     if should_continue == 'y':
-        print("ok let's do this")
+        yesterday_weight = float(input("Enter yesterday's weight: "))
+        daily_lost = round(yesterday_weight -current_weight,2)
+        print(f"Your daily lost is {daily_lost}")
+        actual_time = math.ceil(lose_kg/daily_lost)
+        print(f"Based on your daily lost it should take {actual_time} days to lose {lose_kg}")
+        
     else:
         print("ok bye")
 
